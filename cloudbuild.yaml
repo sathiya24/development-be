@@ -8,7 +8,7 @@ steps:
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 
-           'asia.gcr.io/${PROJECT_ID}/development-be/myimage:${SHORT_SHA}']
+           'asia.gcr.io/${PROJECT_ID}/development-be-repo/myimage:${SHORT_SHA}']
 # Docker Push
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: /bin/bash
