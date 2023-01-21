@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: backened-deployment
-        image: gcr.io/devops-project-368608/development/be-my@sha256:4214abe58ca1d1485f06b4b7a6e6bb5053d4fc13f08c159fb7c5ba598e7a9cbf
+        image: gcr.io/devops-project-368608/development/be@sha256:4ad0efefe4fb27595cf3ebf065778a5b32be42249f5e5436522c8080bb5c0168
         ports:
-        - containerPort: 3001
+        - containerPort: 6015
 ---
 apiVersion: v1
 kind: Service
@@ -28,9 +28,9 @@ metadata:
 spec:
   ports:
   - nodePort: 30028
-    port: 3001
+    port: 6015
     protocol: TCP
-    targetPort: 3001
+    targetPort: 6015
   selector:
     app: backened-deployment
   type: NodePort
@@ -46,10 +46,10 @@ spec:
   - host: "myapps.sathya.shop"
     http: 
       paths: 
-      - path: /books
+      - path: /
         pathType: Prefix
         backend:
           service: 
             name: backened-service
             port:
-              number: 3001
+              number: 6015
