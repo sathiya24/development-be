@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backened-deployment
-        image: asia.gcr.io/devops-project-368608/development-be-repo/myimage@sha256:b773872f8012aadadab18129e3d40f651e7a55e1e08cdeb9c540bd60d38e518d
+        image: asia.gcr.io/devops-project-368608/development-be-repo/myimage@sha256:299e4b58d20e55620f179f2ef3ef7bc2e39a158054bb3fa70e5b215aca1fb8af
         ports:
         - containerPort: 6015
 ---
@@ -43,7 +43,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: "be.sathya.shop"
+  - host: "mybe.sathya.shop"
     http: 
       paths: 
       - path: /
