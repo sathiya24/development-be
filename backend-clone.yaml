@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backened-deployment
+  labels:
+    app: backened-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backened-deployment
+  template:
+    metadata:
+      labels:
+        app: backened-deployment
+    spec:
+      containers:
+      - name: backened-deployment
+        image: asia.gcr.io/devops-project-368608/development-be-repo/myimage:123445
+        ports:
+        - containerPort: 6015
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backened-service
+  namespace: default
+spec:
+  ports:
+  - nodePort: 30028
+    port: 6015
+    protocol: TCP
+    targetPort: 6015
+  selector:
+    app: backened-deployment
+  type: NodePort
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: backened-ingress
+  annotations:
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "mybe.sathya.shop"
+    http: 
+      paths: 
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+            name: backened-service
+            port:
+              number: 6015
