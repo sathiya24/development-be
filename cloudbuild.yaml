@@ -16,3 +16,11 @@ steps:
       - "-c"
       - |
       - echo ${COMMIT_SHA} "HIII" ${SHORT_SHA} "HIi"
+#Kubectl Apply
+      - DOCKER_IMAGE=us-central1-c/development-be-repo/myimage:${SHORT_SHA}'
+      - sed -e "s#CONTAINER_IMAGE#$DOCKER_IMAGE# < backend.yaml > backend-clone.yaml
+      - cat backend-clone.yaml
+      - export GOOGLE_APPLICATION_CREDENTIALS=./serviceaccount.json
+      - gcloud container clusters get-credentials gke-terraform-learn --zone us-central1-c --project devops-project-368608
+      - kubectl apply -f backend-clone.yaml
+
