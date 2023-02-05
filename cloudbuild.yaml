@@ -21,5 +21,5 @@ steps:
     sed -e "s#CONTAINER_IMAGE#$DOCKER_IMAGE#" < backend.yaml > backend-clone.yaml:
     cat backend-clone.yaml:
     export GOOGLE_APPLICATION_CREDENTIALS=./serviceaccount.json:
-    gcloud container clusters get-credentials gke-terraform-learn --zone us-central1-c --project devops-project-368608:
+    gcloud container clusters get-credentials 'gke-terraform-learn --zone us-central1-c --project devops-project-368608':
     kubectl apply -f backend-clone.yaml:
