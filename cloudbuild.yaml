@@ -20,7 +20,7 @@ steps:
 steps:
   - name: bash
   script: 
-    #!DOCKER_IMAGE=asia.gcr.io/devops-project-368608/development-be-repo/myimage:${SHORT_SHA}
+    DOCKER_IMAGE=asia.gcr.io/devops-project-368608/development-be-repo/myimage:${SHORT_SHA}
     sed -e "s#CONTAINER_IMAGE#$DOCKER_IMAGE#" < backend.yaml > backend-clone.yaml:
     cat backend-clone.yaml:
     export GOOGLE_APPLICATION_CREDENTIALS=./serviceaccount.json:
