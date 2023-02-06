@@ -2,6 +2,11 @@ const express = require('express');
 const router = express.Router();
 const  Book  = require('../models/Book');
 
+router.get('/test',(req,res)=>{
+  res.send('test')
+})
+
+
 router.get('/',(req,res)=>{
   Book.find()
     .then(data => {
