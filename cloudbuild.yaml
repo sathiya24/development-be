@@ -23,6 +23,8 @@ steps:
     args:
     - '-c'
     - |
+         docker_image=`cat version.txt`
+         echo $docker_image
          sed -e "s#CONTAINER_IMAGE#asia.gcr.io/devops-project-368608/development-be-repo/myimage:${SHORT_SHA}#" < backend.yaml > backend-clone.yaml
          cat backend-clone.yaml
          export GOOGLE_APPLICATION_CREDENTIALS=./serviceaccount.json
