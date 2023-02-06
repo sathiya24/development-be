@@ -20,7 +20,7 @@ steps:
 steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: /bin/bash
-    args: ['DOCKER_IMAGE']
+    args:
       - "-c"
       - |
          DOCKER_IMAGE=asia.gcr.io/devops-project-368608/development-be-repo/myimage:${SHORT_SHA}
