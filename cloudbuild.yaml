@@ -2,13 +2,13 @@ steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 
-           'asia.gcr.io/${PROJECT_ID}/development-be-repo/myimage:${SHORT_SHA}', 
+           'asia.gcr.io/devops-project-368608/development-be-repo/myimage:${SHORT_SHA}', 
            '.']
 
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 
-           'asia.gcr.io/${PROJECT_ID}/development-be-repo/myimage:${SHORT_SHA}']
+           'asia.gcr.io/devops-project-368608/development-be-repo/myimage:${SHORT_SHA}']
 # Docker Push
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: /bin/bash
