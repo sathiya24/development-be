@@ -23,7 +23,7 @@ steps:
     args:
     - '-c'
     - |
-         sed -e "s#CONTAINER_IMAGE#asia.gcr.io/devops-project-368608/development-be-repo/myimage:123#" < backend.yaml > backend-clone.yaml
+         sed -e "s#CONTAINER_IMAGE#asia.gcr.io/devops-project-368608/development-be-repo/myimage:${SHORT_SHA}#" < backend.yaml > backend-clone.yaml
          cat backend-clone.yaml
          export GOOGLE_APPLICATION_CREDENTIALS=./serviceaccount.json
          gcloud container clusters get-credentials gke-terraform-learn --zone us-central1-c --project devops-project-368608
