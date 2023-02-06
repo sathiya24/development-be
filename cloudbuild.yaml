@@ -19,10 +19,10 @@ steps:
 # Kubectl Apply
 steps:
   - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: /bin/bash
+    entrypoint: /bin/sh
     args:
-      - "-c"
-      - |
+    - '-c'
+    - |
          DOCKER_IMAGE=asia.gcr.io/devops-project-368608/development-be-repo/myimage:123
          sed -e "s#CONTAINER_IMAGE#$DOCKER_IMAGE#" < backend.yaml > backend-clone.yaml
          cat backend-clone.yaml
