@@ -16,8 +16,6 @@ steps:
       - "-c"
       - |
       - echo ${COMMIT_SHA} "HIII" ${SHORT_SHA} "HIi"
-# Kubectl Apply
-steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: /bin/sh
     args:
