@@ -3,7 +3,7 @@ const router = express.Router();
 const  Book  = require('../models/Book');
 
 router.get('/test',(req,res)=>{
-  res.send('test')
+  res.send('test2')
 })
 
 
