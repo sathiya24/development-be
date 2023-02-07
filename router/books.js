@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const  Book  = require('../models/Book');
 
-router.get('/test',(req,res)=>{
+router.get('/tests',(req,res)=>{
   res.send('test2')
 })
 
