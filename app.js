@@ -8,7 +8,7 @@ require('dotenv/config');
 //middleware
 app.use(cors());
 app.use(express.json());
-app.use('/books', Router);
+app.use('/book', Router);
 
 //MONGODB Connection
 mongoose.set('strictQuery', false);
