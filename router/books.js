@@ -5,7 +5,7 @@ const  Book  = require('../models/Book');
 router.get('/',(req,res) => {
   Book.find()
     .then(data => {
-    res.json(data);
+    res.json({data});
     })
     .catch(e => {
         res.json({message:e});
@@ -39,7 +39,7 @@ router.delete('/:id',(req,res) => {
 router.patch('/:id', (req,res) => {
     Book.updateOne({_id: req.params.id},
     {
-     $set: {descripti: req.body.description}
+     $set: {title: req.body.title}
     })
     .then(data => {
         res.json(data);
