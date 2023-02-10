@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const  Book  = require('../models/Book');
 
-router.get('/',(req,res)=>{
+router.get('/',(req,res) => {
   Book.find()
     .then(data => {
     res.json(data);
@@ -39,7 +39,7 @@ router.delete('/:id',(req,res) => {
 router.patch('/:id', (req,res) => {
     Book.updateOne({_id: req.params.id},
     {
-     $set: {description: req.body.description}
+     $set: {title: req.body.title}
     })
     .then(data => {
         res.json(data);
