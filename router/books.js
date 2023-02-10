@@ -39,7 +39,7 @@ router.delete('/:id',(req,res) => {
 router.patch('/:id', (req,res) => {
     Book.updateOne({_id: req.params.id},
     {
-     $set: {title: req.body.title}
+     $set: {descripti: req.body.description}
     })
     .then(data => {
         res.json(data);
