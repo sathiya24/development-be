@@ -5,7 +5,7 @@ const  Book  = require('../models/Book');
 router.get('/',(req,res)=>{
   Book.find()
     .then(data => {
-    res.json({data});
+    res.json(data);
     })
     .catch(e => {
         res.json({message:e});
