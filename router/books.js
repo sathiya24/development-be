@@ -3,7 +3,7 @@ const router = express.Router();
 const  Book  = require('../models/Book');
 
 router.get('/',(req,res) => {
-  console.log("My first log printed here")
+  console.log("My first log are printed here.")
   Book.find()
     .then(data => {
     res.json({data});
@@ -14,7 +14,7 @@ router.get('/',(req,res) => {
 })
 
 router.post(`/`,(req,res) => {
-   console.log("My Post logs printed here", req.body)
+   console.log("My Post logs are printed here", req.body)
    const book = new Book({
       title: req.body.title,
       description: req.body.description
