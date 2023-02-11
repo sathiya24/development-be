@@ -13,7 +13,7 @@ app.use('/books', Router);
 //MONGODB Connection
 mongoose.set('strictQuery', false);
 mongoose.connect((process.env.CONNECTION_STRING), (event) => {
-    console.log('DB Connected!')
+    console.log('DB Connected!!')
 }).catch(e => console.log(e));
 
 //App listen
