@@ -3,6 +3,7 @@ const router = express.Router();
 const  Book  = require('../models/Book');
 
 router.get('/',(req,res) => {
+  console.log("My first log printed here.")
   Book.find()
     .then(data => {
     res.json({data});
