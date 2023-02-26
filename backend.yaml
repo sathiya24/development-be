@@ -43,10 +43,10 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: "mybe.sathya.shop"
+  - host: "backend.sathya.shop"
     http: 
       paths: 
-      - path: /
+      - path: /books
         pathType: Prefix
         backend:
           service: 
