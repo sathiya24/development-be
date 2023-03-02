@@ -2,7 +2,8 @@ steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t',
-           'asia.gcr.io/devops-project-379004/development-be-repo/myimage:${SHORT_SHA}','.']
+           'asia.gcr.io/devops-project-379004/development-be-repo/myimage:${SHORT_SHA}',
+           '.']
   - options:
     logging: CLOUD_LOGGING_ONLY
            
