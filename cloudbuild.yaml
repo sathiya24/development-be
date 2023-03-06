@@ -4,6 +4,8 @@ steps:
     args: ['build', '-t',
            'asia.gcr.io/devops-project-379004/development-be-repo/myimage:${SHORT_SHA}',
            '.']
+  options:
+    logging: CLOUD_LOGGING_ONLY
            
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
@@ -25,6 +27,7 @@ steps:
          echo $docker_image
          sed -e "s#CONTAINER_IMAGE#asia.gcr.io/devops-project-379004/development-be-repo/myimage:${SHORT_SHA}#" < backend.yaml > backend-clone.yaml
          cat backend-clone.yaml
+         export GOOGLE_APPLICATION_CREDENTIALS=./serviceaccount.json
          gcloud container clusters get-credentials cluster-1 --zone us-central1 --project devops-project-379004
          kubectl apply -f backend-clone.yaml  
  
