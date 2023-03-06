@@ -4,8 +4,8 @@ steps:
     args: ['build', '-t',
            'asia.gcr.io/devops-project-379004/development-be-repo/myimage:${SHORT_SHA}',
            '.']
-  options:
-    logging: CLOUD_LOGGING_ONLY
+  - options:
+      logging: CLOUD_LOGGING_ONLY
            
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
