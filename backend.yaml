@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: backened-deployment
-        image: CONTAINER_IMAGE
+        image: asia.gcr.io/just-glow-383705/backened@sha256:bee498f2f6d59cfcf2fb905c6363d6aeb3a7c4e67471da74513184d0f747b323
         ports:
-        - containerPort: 6015
+        - containerPort: 6020
 ---
 apiVersion: v1
 kind: Service
@@ -28,9 +28,9 @@ metadata:
 spec:
   ports:
   - nodePort: 30028
-    port: 6015
+    port: 6020
     protocol: TCP
-    targetPort: 6015
+    targetPort: 6020
   selector:
     app: backened-deployment
   type: NodePort
@@ -52,4 +52,4 @@ spec:
           service: 
             name: backened-service
             port:
-              number: 6015
+              number: 6020
