@@ -2,20 +2,20 @@ steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t',
-           'asia.gcr.io/devops-404710/development-beckend-repo/myimage:${SHORT_SHA}',
+           'asia.gcr.io/devops-404710/backend/myimage:${SHORT_SHA}',
            '.']
            
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 
-           'asia.gcr.io/devops-404710/development-beckend-repo/myimage:${SHORT_SHA}']
+           'asia.gcr.io/devops-404710/backend/myimage:${SHORT_SHA}']
 # Docker Push
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: /bin/bash
     args: 
       - "-c"
       - |
-      - echo ${COMMIT_SHA} "HIII" ${SHORT_SHA} "HIi"
+      - echo ${COMMIT_SHA} "HIII" ${SHORT_SHA} "HII"
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: /bin/sh
     args:
@@ -23,7 +23,7 @@ steps:
     - |
          docker_image=`cat version.txt`
          echo $docker_image
-         sed -e "s#CONTAINER_IMAGE#asia.gcr.io/devops-404710/development-beckend-repo/myimage:${SHORT_SHA}#" < backend.yaml > backend-clone.yaml
+         sed -e "s#CONTAINER_IMAGE#asia.gcr.io/devops-404710/backend/myimage:${SHORT_SHA}#" < backend.yaml > backend-clone.yaml
          cat backend-clone.yaml
          export GOOGLE_APPLICATION_CREDENTIALS=./serviceaccount.json
          gcloud container clusters get-credentials my-first-gke-cluster1 --zone us-central1 --project devops-404710
