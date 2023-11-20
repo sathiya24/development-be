@@ -4,8 +4,6 @@ steps:
     args: ['build', '-t',
            'asia.gcr.io/devops-404710/backend/myimage:${SHORT_SHA}',
            '.']
-options:
-      logging: GCS_ONLY
            
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
