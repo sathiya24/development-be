@@ -26,6 +26,6 @@ steps:
          sed -e "s#CONTAINER_IMAGE#asia.gcr.io/devops-404710/backend/myimage:${SHORT_SHA}#" < backend.yaml > backend-clone.yaml
          cat backend-clone.yaml
          export GOOGLE_APPLICATION_CREDENTIALS=./serviceaccount.json
-         gcloud container clusters get-credentials my-first-gke-cluster1 --zone us-central1 --project devops-404710
+         gcloud container clusters get-credentials gke-cluster-1 --zone us-central1 --project devops-404710
          kubectl apply -f backend-clone.yaml
  
