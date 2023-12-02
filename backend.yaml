@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backened-deployment
-        image: asia.gcr.io/devops-404710/backend@sha256:fe227fdf605da6e98c307236210c5b19786acbee538210db6b38511937eed7f0
+        image: CONTAINER_IMAGE
         ports:
         - containerPort: 6020
 ---
