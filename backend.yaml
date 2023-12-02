@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backened-deployment
-        image: asia.gcr.io/just-glow-383705/backened@sha256:bee498f2f6d59cfcf2fb905c6363d6aeb3a7c4e67471da74513184d0f747b323
+        image: asia.gcr.io/devops-404710/backend@sha256:fe227fdf605da6e98c307236210c5b19786acbee538210db6b38511937eed7f0
         ports:
         - containerPort: 6020
 ---
@@ -43,7 +43,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: "backend.sathya.shop"
+  - host: "backend.sathyas.shop"
     http: 
       paths: 
       - path: /books
