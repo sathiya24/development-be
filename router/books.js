@@ -13,6 +13,11 @@ router.get('/',(req,res) => {
     })
 })
 
+router.get('/sathyaendpoint',(req,res) => {
+  console.log("My first log are printed here.")
+   res.send({name : "I am sathya"})
+})
+
 router.post(`/`,(req,res) => {
    console.log("My Post logs are printed here", req.body)
    const book = new Book({
