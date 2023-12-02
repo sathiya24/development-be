@@ -4,10 +4,6 @@ steps:
     args: ['build', '-t',
            'asia.gcr.io/devops-404710/backend/myimage:${SHORT_SHA}',
            '.']
-options:
-  logging:
-    # Replace 'YOUR_LOGS_BUCKET_NAME' with the actual bucket name
-    logsBucket: 'asia.artifacts.devops-404710.appspot.com'
            
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
